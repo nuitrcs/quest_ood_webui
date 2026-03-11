@@ -38,11 +38,11 @@ batch_connect:
     export SING_ENV_VARS=""
 
     <%- if ollama_models_dir != "" %>
-    export SING_BINDS="$SING_ENV_VARS --env OLLAMA_MODELS=<%= ollama_models_dir %>"
+    export SING_ENV_VARS="$SING_ENV_VARS --env OLLAMA_MODELS=<%= ollama_models_dir %>"
     <%- end %>
 
     <%- if ollama_context_length != "" %>
-    export SING_BINDS="$SING_ENV_VARS --env OLLAMA_CONTEXT_LENGTH=<%= ollama_context_length %>"
+    export SING_ENV_VARS="$SING_ENV_VARS --env OLLAMA_CONTEXT_LENGTH=<%= ollama_context_length %>"
     <%- end %>
 
     # Need to add the --nv flag if we are running on a GPU
